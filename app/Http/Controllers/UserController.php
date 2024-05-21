@@ -12,7 +12,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('criptomonedas.index');
     }
 
     /**
@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+
     }
 
     /**
