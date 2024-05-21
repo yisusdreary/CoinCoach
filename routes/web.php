@@ -20,3 +20,7 @@ Route::get('/', function () {
 
 Route::resource('criptomonedas', CriptomonedaController::class);
 Route::resource('ventas', \App\Http\Controllers\VentaController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
