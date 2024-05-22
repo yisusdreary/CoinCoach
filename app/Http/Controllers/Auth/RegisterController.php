@@ -48,11 +48,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        //dd($data);
+
+        $messages = [
+            'capital.min' => 'El minimo es 1 peso.',
+            'capital.max' => 'El maximo es 1 millón.',
+            'fecha_nac.before' => 'La fecha debe ser anterior a la actual.',
+        ];
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'capital' => 'required|numeric|min:1|max:1000000',
+            'fecha_nac' => 'required|date|before:today',
+            'fecha_reg' => 'required|date',
+        ], $messages);
     }
 
     /**
@@ -63,8 +74,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //Consulta para obtener la cantidad de usuarios en la tabla users, sin importar si ya fueron eliminados.
+        $data['num_reg'] = User::withTrashed()->count();
+        $data['num_reg']++;
+        //dd($data);
+
         return User::create([
             'name' => $data['name'],
+            'capital' => $data['capital'],
+            'fecha_nac'=> $data['fecha_nac'],
+            'fecha_reg' => $data['fecha_reg'],
+            'no_identificacion' => $data['num_reg'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
