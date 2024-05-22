@@ -60,7 +60,10 @@
                         <div class="col-6 pt-2 ms-2"><h3>Venta</h3></div>
                     </div>
                 </a>
-                <a href="{{route('users.index')}}" class="ms-3 navbar-brand pt-4">
+                @php
+                    $id = \Illuminate\Support\Facades\Auth::user()->id;
+                @endphp
+                <a href="{{route('users.edit',$id)}}" class="ms-3 navbar-brand pt-4">
                     <div class="row align-middle">
                         <div class="col-3"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
                                 <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>

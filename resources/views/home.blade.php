@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
+                @php(\Brian2694\Toastr\Facades\Toastr::success('Se actualizaron los datos correctamente','Exito'))
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
