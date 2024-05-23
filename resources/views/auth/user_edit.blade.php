@@ -47,7 +47,7 @@
 
                             <div class="row mb-3 justify-content-center">
                                 <div class="col-md-6 offset-md-4">
-                                    <button id="cambiar_datos" type="submit" class="btn btn-primary">
+                                    <button id="cambiar_datos" type="button" class="btn btn-primary">
                                         {{ __('Cambiar datos') }}
                                     </button>
                                 </div>
@@ -59,27 +59,24 @@
             </div>
         </div>
     </div>
-    @push("scripts")
-        <script>
-            import Swal from "sweetalert2";
-
-            $('#cambiar_datos').click(function (){
-
-                Swal.fire({
-                    title: '¿Estás seguro?',
-                    text: '¿Deseas registrar los datos del informe? Una vez hecho no se podrán realizar cambios',
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Sí, registrar',
-                    cancelButtonText: 'Cancelar',
-                    reverseButtons: true
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        // Si el usuario confirma, envía el formulario
-                        document.getElementById('datos_cambio').submit();
-                    }
-                });
-            })
-        </script>
-    @endpush
+@endsection
+@section('scripts')
+    <script>
+        $('#cambiar_datos').click(function (){
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: '¿Deseas actualizar tus datos?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, actualizar',
+                cancelButtonText: 'Cancelar',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Si el usuario confirma, envía el formulario
+                    document.getElementById('datos_cambio').submit();
+                }
+            });
+        })
+    </script>
 @endsection

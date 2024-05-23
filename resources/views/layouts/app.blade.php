@@ -22,6 +22,11 @@
             background-color: #396da6;
         }
     </style>
+
+    {{--SweetAlert2--}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </head>
 <body>
     <div id="app">
@@ -125,5 +130,10 @@
             @yield('content')
         </main>
     </div>
+
+    {{--jQuery--}}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    {{--Para sweetalert2--}}
+    @yield('scripts')
 </body>
 </html>

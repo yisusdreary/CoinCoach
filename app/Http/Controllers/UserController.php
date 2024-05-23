@@ -59,12 +59,14 @@ class UserController extends Controller
         $messages = [
             'nombre.required' => 'El nombre es requerido',
             'capital.required' => 'El capital es requerido',
-            'capital.numeric' => 'El capital tiene que se numerico'
+            'capital.numeric' => 'El capital tiene que se numerico',
+            'capital.min' => 'El minimo es 1 peso.',
+            'capital.max' => 'El maximo es 1 millón.',
         ];
 
         $request->validate([
             'nombre' => 'required',
-            'capital' => 'required|numeric',
+            'capital' => 'required|numeric|min:1|max:1000000',
         ], $messages);
 
         User::where('id',$user)->update([
@@ -73,8 +75,9 @@ class UserController extends Controller
         ]);
         //dd($user, $request->all());
 
-        Toastr::success('Se actualizaron los datos correctamente','Exito');
-        return redirect()->route('home.index');
+        //Toastr::success('Se actualizaron los datos correctamente','Exito');
+        //La sesion viaja hacia la vista y despues en la vista con javaScript, se confirma que exista y se muestra el mensaje de la alerta.
+        return redirect()->route('home.index')->with('success','Registro actualizado.');
     }
 
     /**
