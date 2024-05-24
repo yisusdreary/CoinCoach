@@ -17,16 +17,11 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <!-- Styles -->
-    <style>
-        body {
-            background-color: #396da6;
-        }
-    </style>
 </head>
-<body>
+<body class="bg-coin-100">
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light shadow-sm pt-3 pb-2 " style="background: #eef0ef">
-        <a class="navbar-brand " href="{{ url('/') }}">
+    <nav class="navbar navbar-expand-md navbar-light shadow-sm pt-3 pb-2 border-black border-bottom border-2" style="background: #eef0ef">
+        <a class="navbar-brand " href="{{ url('/home') }}">
             <div class="row me-4">
                 <div class="col-3 mt-n1"><img src="{{ asset('storage/logo2.png') }}" height="100px" width="110px" alt="Logo de CoinCoach"></div>
                 <div class="col-9 ps-4 pt-2"><h1 class="fw-bolder display-3">Coin-Coach</h1></div>

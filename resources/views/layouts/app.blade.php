@@ -12,26 +12,21 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    <!-- Styles -->
-    <style>
-        body {
-            background-color: #396da6;
-        }
-    </style>
 
     {{--SweetAlert2--}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 </head>
-<body>
+<body class="bg-coin-100">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm pt-3 pb-2 " style="background: #eef0ef">
-            <a class="navbar-brand " href="{{ url('/') }}">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm pt-3 pb-2 border-black border-bottom border-1 bg-white">
+            <a class="navbar-brand " href="{{ url('/home') }}">
                 <div class="row me-4">
                     <div class="col-3 mt-n1"><img src="{{ asset('storage/logo2.png') }}" height="100px" width="110px" alt="Logo de CoinCoach"></div>
                     <div class="col-9 ps-4 pt-2"><h1 class="fw-bolder display-3">Coin-Coach</h1></div>
@@ -48,7 +43,7 @@
                 </a>
                 <a href="" class="ms-3 navbar-brand pt-4">
                     <div class="row align-middle">
-                        <div class="col-3"><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-currency-bitcoin" viewBox="0 0 16 16">
+                        <div class="col-3"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-currency-bitcoin" viewBox="0 0 16 16">
                                 <path d="M5.5 13v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.5v1.25c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25V13h.084c1.992 0 3.416-1.033 3.416-2.82 0-1.502-1.007-2.323-2.186-2.44v-.088c.97-.242 1.683-.974 1.683-2.19C11.997 3.93 10.847 3 9.092 3H9V1.75a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25V3h-.573V1.75a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25V3l-1.998.011a.25.25 0 0 0-.25.25v.989c0 .137.11.25.248.25l.755-.005a.75.75 0 0 1 .745.75v5.505a.75.75 0 0 1-.75.75l-.748.011a.25.25 0 0 0-.25.25v1c0 .138.112.25.25.25zm1.427-8.513h1.719c.906 0 1.438.498 1.438 1.312 0 .871-.575 1.362-1.877 1.362h-1.28zm0 4.051h1.84c1.137 0 1.756.58 1.756 1.524 0 .953-.626 1.45-2.158 1.45H6.927z"/>
                             </svg></div>
                         <div class="col-6 pt-2"><h3>Compra</h3></div>
@@ -104,12 +99,12 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle fw-bolder pt-4" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item fw-bolder " href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Cerrar sesión') }}
@@ -124,6 +119,7 @@
                     </ul>
                 </div>
             </div>
+
         </nav>
 
         <main class="py-4">
