@@ -4,5 +4,31 @@
 // Variables
 @import 'variables';
 
+$theme-colors:(
+    "coin-500": #415D85,
+    "coin-400": #758CA8,
+    "coin-300": #265CA2,
+    "coin-200": #568CBD,
+    "coin-100": #E1EBF1,
+    "light": #f8f9fa,
+    "dark": #343a40,
+    "primary": #007bff,
+    "secondary": #6c757d,
+    "info": #17a2b8,
+    "success": #28a745,
+    "warning": #ffc107,
+    "danger": #dc3545
+);
+
+$table-variants:(
+    "coin": #75aee1,
+    "dark": #000000
+);
+
+$table-striped-color: #ddf4fd;
+$table-striped-bg-factor:     .15;
+$table-striped-bg:            #ffffff;
+
+
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
