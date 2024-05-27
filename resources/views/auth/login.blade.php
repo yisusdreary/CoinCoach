@@ -5,11 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-<<<<<<< HEAD
-                <div class="card-header">{{ __('Login') }}</div>
-=======
+
                 <div class="card-header mt-2"><h3>Iniciar sesión</h3></div>
->>>>>>> 4632a58619c9e182ec606b6be9976749009b9057
+
 
                 <div class="card-body" style="background: #eef0ef">
                     <form method="POST" action="{{ route('login') }}">
@@ -19,11 +17,10 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-<<<<<<< HEAD
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-=======
+
+
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Correo" required autocomplete="email">
->>>>>>> 4632a58619c9e182ec606b6be9976749009b9057
+
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">

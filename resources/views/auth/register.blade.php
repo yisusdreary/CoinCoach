@@ -5,11 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-<<<<<<< HEAD
-                <div class="card-header">{{ __('Register') }}</div>
-=======
+
                 <div class="card-header mt-2"><h3>Crear Cuenta</h3></div>
->>>>>>> 4632a58619c9e182ec606b6be9976749009b9057
+
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

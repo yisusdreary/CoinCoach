@@ -12,24 +12,14 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-=======
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-
-    {{--SweetAlert2--}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
->>>>>>> 4632a58619c9e182ec606b6be9976749009b9057
 </head>
 <body class="bg-coin-100">
     <div id="app">
@@ -96,21 +86,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-<<<<<<< HEAD
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-=======
                                     <a class="nav-link" href="{{ route('login') }}"><h4>{{ __('Iniciar Sesión') }}</h4></a>
->>>>>>> 4632a58619c9e182ec606b6be9976749009b9057
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-<<<<<<< HEAD
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-=======
                                     <a class="nav-link" href="{{ route('register') }}"><h4>{{ __('Registrarme') }}</h4></a>
->>>>>>> 4632a58619c9e182ec606b6be9976749009b9057
                                 </li>
                             @endif
                         @else

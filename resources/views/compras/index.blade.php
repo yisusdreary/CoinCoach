@@ -2,10 +2,10 @@
 
 @section("content")
     <div class="container">
-        <h1 class="custom-size">Venta</h1>
+        <h1 class="custom-size">Compra</h1>
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group  mt-4">
+                <div class="form-group mt-4">
                     <label for="criptomoneda">Seleccionar Criptomoneda</label>
                     <select class="form-control-lg" id="criptomoneda" name="criptomoneda">
                         <option value="bitcoin">Bitcoin</option>
@@ -16,7 +16,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="numero1">Cantidad de criptomonedas a vender</label>
+                    <label for="numero1">Cantidad de criptomonedas a comprar</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="bi bi-currency-bitcoin fs-1"></i></span>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="numero2">Ganancia a pesos</label>
+                    <label for="numero2">Precio a pesos</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="bi bi-currency-dollar fs-1"></i></span>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-group mt-3">
-                    <button type="button" class="btn btn-primary">Vender criptos</button>
+                    <button type="button" class="btn btn-primary">Comprar criptos</button>
                 </div>
             </div>
         </div>
