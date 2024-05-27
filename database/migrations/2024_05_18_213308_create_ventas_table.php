@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ventas', function (Blueprint $table) {
+        Schema::create('ventasAdmin', function (Blueprint $table) {
             $table->bigIncrements('id_venta');
             $table->Biginteger('id_cliente')->nullable()->unsigned();
             $table->Biginteger('id_criptomoneda')->nullable()->unsigned();
@@ -27,7 +27,7 @@ return new class extends Migration
 
             $table->foreign('id_criptomoneda')
                 ->references("id_criptomoneda")
-                ->on("criptomonedas");
+                ->on("criptomonedasAdmin");
         });
     }
 
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ventas');
+        Schema::dropIfExists('ventasAdmin');
     }
 };

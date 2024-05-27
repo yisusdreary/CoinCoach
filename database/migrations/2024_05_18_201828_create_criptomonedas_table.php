@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('criptomonedas', function (Blueprint $table) {
+        Schema::create('criptomonedasAdmin', function (Blueprint $table) {
             $table->bigIncrements('id_criptomoneda');
             $table->string('nombre_c');
             $table->double('precio_actual');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('criptomonedas');
+        Schema::dropIfExists('criptomonedasAdmin');
     }
 };

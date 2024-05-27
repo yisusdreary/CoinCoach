@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CriptomonedaController;
+use App\Http\Controllers\CriptomonedaAdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +21,9 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::resource('criptomonedas', CriptomonedaController::class);
-Route::resource('ventas', \App\Http\Controllers\VentaController::class);
+Route::resource('criptomonedasAdmin', CriptomonedaAdminController::class);
+Route::resource('ventasAdmin', \App\Http\Controllers\VentaAdminController::class);
+Route::resource('comprasAdmin', \App\Http\Controllers\CompraAdminController::class);
 
 Route::resource('users', \App\Http\Controllers\UserController::class);
 //Es necesario colocar una ruta nueva porque laravel solo genera las rutas para los metodos ya definidos por defecto

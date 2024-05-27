@@ -59,7 +59,7 @@
                     <td>Comprar</td>
                 </tr>
                 </thead>
-                <tbody class=" border-black">
+                <tbody class="table-coin border-black">
                 @foreach($criptomonedas as $criptomoneda)
                     <tr >
                         <td class="fw-bolder">{{$criptomoneda->nombre_c}}</td>
@@ -75,24 +75,7 @@
             </table>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
-                @php(\Brian2694\Toastr\Facades\Toastr::success('Se actualizaron los datos correctamente','Exito'))
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection
 @section('scripts')

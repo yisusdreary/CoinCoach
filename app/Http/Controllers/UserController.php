@@ -13,7 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('criptomonedas.index');
+        $usuarios = User::all();
+        return view('users.index', compact('usuarios'));
     }
 
     /**

@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Criptomoneda;
+use App\Models\Venta;
 use Illuminate\Http\Request;
 
-class CriptomonedaController extends Controller
+class VentaAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('criptomonedas.index');
+        $ventas = Venta::all();
+        return view('ventasAdmin.index', compact('ventas'));
     }
 
     /**
@@ -34,7 +35,7 @@ class CriptomonedaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Criptomoneda $criptomoneda)
+    public function show(Venta $venta)
     {
         //
     }
@@ -42,7 +43,7 @@ class CriptomonedaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Criptomoneda $criptomoneda)
+    public function edit(Venta $venta)
     {
         //
     }
@@ -50,7 +51,7 @@ class CriptomonedaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Criptomoneda $criptomoneda)
+    public function update(Request $request, Venta $venta)
     {
         //
     }
@@ -58,7 +59,7 @@ class CriptomonedaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Criptomoneda $criptomoneda)
+    public function destroy(Venta $venta)
     {
         //
     }

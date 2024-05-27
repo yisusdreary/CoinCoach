@@ -21,13 +21,14 @@ $theme-colors:(
 );
 
 $table-variants:(
-    "coin": #75aee1,
+    "coin-head": #E1EBF1,
+    "coin": #a8d4fd,
     "dark": #000000
 );
 
-$table-striped-color: #ddf4fd;
-$table-striped-bg-factor:     .15;
-$table-striped-bg:            #ffffff;
+$table-striped-color: #FFFFFF;
+$table-striped-bg-factor: 0.2;
+$table-striped-bg: #E1EBF1;
 
 
 // Bootstrap
