@@ -21,16 +21,17 @@ Route::get('/', function () {
 
 
 Auth::routes();
+
 Route::resource('criptomonedasAdmin', CriptomonedaAdminController::class);
 Route::resource('ventasAdmin', \App\Http\Controllers\VentaAdminController::class);
 Route::resource('comprasAdmin', \App\Http\Controllers\CompraAdminController::class);
+
+Route::resource('ventas', \App\Http\Controllers\VentasController::class);
+Route::resource('compras', \App\Http\Controllers\ComprasController::class);
 
 Route::resource('users', \App\Http\Controllers\UserController::class);
 //Es necesario colocar una ruta nueva porque laravel solo genera las rutas para los metodos ya definidos por defecto
                 //URL                                           //Controlador      //Metodo           //Nombre de la ruta
 Route::put('usuario/{id}', [\App\Http\Controllers\UserController::class, 'actualizar'])->name('usuario.actualizar');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::resource('home', \App\Http\Controllers\HomeController::class);
-

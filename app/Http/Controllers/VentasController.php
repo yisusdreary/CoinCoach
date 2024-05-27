@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Compra;
 use Illuminate\Http\Request;
 
-class CompraAdminController extends Controller
+class VentasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +12,7 @@ class CompraAdminController extends Controller
     public function index()
     {
 
-        $compras = Compra::all();
-        return view('comprasAdmin.index', compact("compras"));
+        return view('ventas.index');
     }
 
     /**
@@ -36,7 +34,7 @@ class CompraAdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Compra $compra)
+    public function show(string $id)
     {
         //
     }
@@ -44,7 +42,7 @@ class CompraAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Compra $compra)
+    public function edit(string $id)
     {
         //
     }
@@ -52,7 +50,7 @@ class CompraAdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Compra $compra)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -60,7 +58,7 @@ class CompraAdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Compra $compra)
+    public function destroy(string $id)
     {
         //
     }
