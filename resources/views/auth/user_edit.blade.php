@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header mt-2"><h3>Modificar perfil</h3></div>
+                <div class="card bg-white">
+                    <div class="card-header bg-white mt-2"><h3>Modificar perfil</h3></div>
 
                     <div class="card-body" style="background: #eef0ef">
                         <form method="POST" action="{{ route('users.update',$user) }}" id="datos_cambio">

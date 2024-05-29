@@ -62,6 +62,7 @@ class CompraAdminController extends Controller
      */
     public function destroy(Compra $compra)
     {
-        //
+        $compra->delete();
+        return redirect()->back();
     }
 }

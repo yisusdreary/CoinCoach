@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card bg-white">
 
-                <div class="card-header mt-2"><h3>Crear Cuenta</h3></div>
+                <div class="card-header mt-2 bg-white"><h3>Crear Cuenta</h3></div>
 
 
                 <div class="card-body">
@@ -115,7 +115,7 @@
 
                         <div class="row mb-0 justify-content-center">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary text-white fw-bolder">
                                     {{ __('Registrarme') }}
                                 </button>
                             </div>

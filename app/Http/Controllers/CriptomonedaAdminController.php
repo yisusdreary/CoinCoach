@@ -59,8 +59,11 @@ class CriptomonedaAdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Criptomoneda $criptomoneda)
+    public function destroy($criptomoneda)
     {
-        //
+        //dd($criptomoneda->all());
+        $dato = Criptomoneda::find($criptomoneda);
+        $dato->delete();
+        return redirect()->back();
     }
 }

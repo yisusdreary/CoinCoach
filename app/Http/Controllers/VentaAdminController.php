@@ -61,6 +61,7 @@ class VentaAdminController extends Controller
      */
     public function destroy(Venta $venta)
     {
-        //
+        $venta->delete();
+        return redirect()->back();
     }
 }

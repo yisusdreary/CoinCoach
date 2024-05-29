@@ -24,7 +24,7 @@
                         <td>{{$criptomoneda->precio_actual}}</td>
                         <td>{{$criptomoneda->precio_anterior}}</td>
                         <td>
-                            <form action="" method="POST">
+                            <form action="{{route("criptomonedasAdmin.destroy", $criptomoneda->id_criptomoneda)}}" method="POST" class="delete-form">
                                 @csrf
                                 @method("DELETE")
                                 <button class="btn btn-danger">x</button>

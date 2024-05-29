@@ -10,8 +10,6 @@
                 <tr>
                     <td>Indice</td>
                     <td>Nombre</td>
-                    <td>Apellido Paterno</td>
-                    <td>Apellido Materno</td>
                     <td>No. de identificación</td>
                     <td>Capital</td>
                     <td>Rendimiento</td>
@@ -25,8 +23,6 @@
                     <tr>
                         <td>{{$loop->index+1}}</td>
                         <td>{{$usuario->name}}</td>
-                        <td>{{$usuario->ap}}</td>
-                        <td>{{$usuario->am}}</td>       
                         <td>{{$usuario->no_identificacion}}</td>
                         <td>{{$usuario->capital}}</td>
                         <td>{{$usuario->rendimiento}}</td>
