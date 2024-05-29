@@ -11,7 +11,7 @@ class Criptomoneda extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $table="criptomonedas";
+    protected $table = "criptomonedas";
     protected $primaryKey = 'id_criptomoneda';
     protected $fillable = [
         'nombre_c',
