@@ -13,8 +13,9 @@ class CriptomonedaAdminController extends Controller
     public function index()
     {
         $criptomonedas = Criptomoneda::all();
-        return view('criptomonedasAdmin.index', compact("criptomonedas"));
+        return view('criptomonedasAdmin.index', compact('criptomonedas'));
     }
+
 
     /**
      * Show the form for creating a new resource.
