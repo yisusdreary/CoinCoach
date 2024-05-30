@@ -4,7 +4,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card bg-white">
-                    <div class="card-header bg-white mt-2"><h3>Modificar perfil</h3></div>
+                    <div class="card-header bg-white mt-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3>Modificar perfil</h3>
+                            </div>
+                            <div class="col-6 d-flex align-items-end justify-content-end">
+                                <a href="{{ route('users.index') }}" class="btn btn-primary float-right">Regresar</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="card-body" style="background: #eef0ef">
                         <form method="POST" action="{{ route('users.update',$user) }}" id="datos_cambio">

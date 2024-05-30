@@ -57,6 +57,8 @@ class UserController extends Controller
      */
     public function update(Request $request, $user)
     {
+        $id_sesion = auth()->user()->id;
+
         $messages = [
             'nombre.required' => 'El nombre es requerido',
             'capital.required' => 'El capital es requerido',
@@ -78,7 +80,12 @@ class UserController extends Controller
 
         //Toastr::success('Se actualizaron los datos correctamente','Exito');
         //La sesion viaja hacia la vista y despues en la vista con javaScript, se confirma que exista y se muestra el mensaje de la alerta.
-        return redirect()->route('home.index')->with('success','Registro actualizado.');
+        if($id_sesion == 1){
+            return redirect()->route('users.index')->with('success','Registro actualizado.');
+
+        }else{
+            return redirect()->route('home.index')->with('success','Registro actualizado.');
+        }
     }
 
     /**
