@@ -14,11 +14,17 @@ class ComprasController extends Controller
     public function index()
     {
 
+
     // Obtener todas las criptomonedas disponibles
+
+
+// Obtener todas las criptomonedas disponibles
+
         $criptomonedas = Criptomoneda::all();
+        $id = 2;
 
         // Pasar los datos a la vista 'ventas.index'
-        return view('compras.index', compact('criptomonedas'));
+        return view('compras.index', compact('criptomonedas', 'id'));
     }
 
     /**
@@ -71,7 +77,7 @@ class ComprasController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
@@ -96,5 +102,9 @@ class ComprasController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function comprahome($id){
+        $criptomonedas = Criptomoneda::all();
+        return view('compras.index', compact('id', 'criptomonedas'));
     }
 }

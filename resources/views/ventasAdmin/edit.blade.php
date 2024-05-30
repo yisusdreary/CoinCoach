@@ -3,10 +3,9 @@
     <div class="row mt-4">
         <div class="col-2"></div>
         <div class="col">
-            <form action="{{url("comprasAdmin")}}" method="POST">
+            <form action="{{route("ventasAdmin.update", $venta)}}" method="POST">
                 @csrf
-                @method("PUT")
-                <h1>Editar compras</h1>
+                <h1>Editar ventas</h1>
 
                 <div class="mb-3 mt-4">
                     <label for="id" class="form-label">Usuario</label>
@@ -42,7 +41,7 @@
 
                 <div class="row">
                     <div class="col-1 me-3">
-                        <a href="{{url("comprasAdmin")}}" type="submit" class="btn btn-danger mt-4 fw-bolder">Cancelar</a>
+                        <a href="{{url("ventasAdmin")}}" type="submit" class="btn btn-danger mt-4 fw-bolder">Cancelar</a>
                     </div>
                     <div class="mt-3">
                         <button type="submit" class="btn text-white fw-bolder btn-primary btn-lg ">Guardar</button>

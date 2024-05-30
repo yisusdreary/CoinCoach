@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Compra;
+use App\Models\Criptomoneda;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CompraAdminController extends Controller
@@ -22,7 +24,9 @@ class CompraAdminController extends Controller
      */
     public function create()
     {
-        //
+        $criptomonedas = Criptomoneda::all();
+        $usuarios = User::all();
+        return view('comprasAdmin.create', compact('criptomonedas', 'usuarios'));
     }
 
     /**
@@ -30,7 +34,14 @@ class CompraAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Compra::create([
+            'id_cliente' => $request->id,
+            'id_criptomoneda' => $request->id_criptomoneda,
+            'fecha_compra' => now(),
+            'cantidad_de_compra' => $request->cantidad_de_compra,
+            'total' =>$request->total
+        ]);
+        return redirect()->route("comprasAdmin.index");
     }
 
     /**
@@ -46,7 +57,9 @@ class CompraAdminController extends Controller
      */
     public function edit(Compra $compra)
     {
-        //
+        $criptomonedas = Criptomoneda::all();
+        $usuarios = User::all();
+        return view('comprasAdmin.edit', compact('criptomonedas', 'usuarios'));
     }
 
     /**
@@ -60,8 +73,10 @@ class CompraAdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Compra $compra)
+    public function destroy($compra)
     {
-        //
+        $dato = Compra::find($compra);
+        $dato->delete();
+        return redirect()->back();
     }
 }

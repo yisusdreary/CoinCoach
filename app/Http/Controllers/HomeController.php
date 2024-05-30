@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Criptomoneda;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $usuarios = User::all();
         $criptomonedas = Criptomoneda::all();
-        return view('home', compact("criptomonedas"));
+        return view('home', compact("criptomonedas", "usuarios"));
     }
 }

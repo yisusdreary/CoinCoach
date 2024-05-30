@@ -4,22 +4,22 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card bg-white">
 
-                <div class="card-header mt-2"><h3>Iniciar sesión</h3></div>
+                <div class="card-header mt-2 bg-white"><h3>Iniciar sesión</h3></div>
 
 
-                <div class="card-body" style="background: #eef0ef">
+                <div class="card-body bg-white" style="background: #eef0ef">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Correo electrónico') }}</label>
 
                             <div class="col-md-6">
 
 
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Correo" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="" required autocomplete="email">
 
 
                                 @error('email')
@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -50,7 +50,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Recúerdame') }}
                                     </label>
                                 </div>
                             </div>
@@ -58,8 +58,8 @@
 
                         <div class="row mb-3 justify-content-center">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                <button type="submit" class="btn btn-primary text-white fw-bolder">
+                                    {{ __('Inicia sesión') }}
                                 </button>
 
                                 {{--

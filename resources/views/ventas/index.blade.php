@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <button type="submit" class="btn btn-primary btn-lg">Vender Criptos</button>
+                        <button type="submit" class="btn text-white fw-bolder btn-primary btn-lg">Vender Criptos</button>
                     </div>
                 </form>
             </div>

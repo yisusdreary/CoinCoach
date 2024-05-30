@@ -22,7 +22,7 @@ class CriptomonedaAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('criptomonedasAdmin.create');
     }
 
     /**
@@ -30,7 +30,12 @@ class CriptomonedaAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Criptomoneda::create([
+        "nombre_c"=>$request->nombre_c,
+        "precio_actual"=>$request->precio_actual,
+        "precio_anterior"=>0
+    ]);
+        return redirect()->route("criptomonedasAdmin.index");
     }
 
     /**
@@ -46,7 +51,7 @@ class CriptomonedaAdminController extends Controller
      */
     public function edit(Criptomoneda $criptomoneda)
     {
-        //
+        return view('criptomonedasAdmin.edit', compact('criptomoneda'));
     }
 
     /**
@@ -54,14 +59,22 @@ class CriptomonedaAdminController extends Controller
      */
     public function update(Request $request, Criptomoneda $criptomoneda)
     {
-        //
+        $criptomoneda->update([
+            "nombre_c"=>$request->nombre_c,
+            "precio_actual"=>$request->precio_actual,
+            "precio_anterior"=>$criptomoneda->precio_actual
+        ]);
+        return redirect()->route("criptomonedasAdmin.index");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Criptomoneda $criptomoneda)
+    public function destroy($criptomoneda)
     {
-        //
+        //dd($criptomoneda->all());
+        $dato = Criptomoneda::find($criptomoneda);
+        $dato->delete();
+        return redirect()->back();
     }
 }
