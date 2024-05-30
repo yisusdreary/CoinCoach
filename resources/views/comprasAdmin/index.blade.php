@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-8 bg-white pt-3">
 
-            <a href="" class="btn btn-success text-white mb-3">Agregar compras</a>
+            <a href="{{url("comprasAdmin/create")}}" class="btn btn-success text-white mb-3">Agregar compras</a>
 
             <table class="table">
                 <thead>
@@ -28,14 +28,14 @@
                         <td>{{$compra->cantidad_de_compra}}</td>
                         <td>{{$compra->total}}</td>
                         <td>
-                            <form action="" method="POST">
+                            <form action="{{route("comprasAdmin.destroy", $compra->id_compra)}}" method="POST" class="delete-form">
                                 @csrf
                                 @method("DELETE")
                                 <button class="btn btn-danger">x</button>
                             </form>
                         </td>
                         <td>
-                            <a class="btn btn-primary text-white" href="">Editar</a>
+                            <a class="btn btn-primary text-white" href="{{route("comprasAdmin.edit", $compra)}}">Editar</a>
                         </td>
                     </tr>
                 @endforeach

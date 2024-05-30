@@ -19,7 +19,7 @@
                             <div class="col-md-6">
 
 
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Correo" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="" required autocomplete="email">
 
 
                                 @error('email')
@@ -50,7 +50,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Recúerdame') }}
                                     </label>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                         <div class="row mb-3 justify-content-center">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary text-white fw-bolder">
-                                    {{ __('Login') }}
+                                    {{ __('Inicia sesión') }}
                                 </button>
 
                                 {{--

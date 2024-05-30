@@ -21,14 +21,14 @@
                 <tbody>
                 @foreach($usuarios as $usuario)
                     <tr>
-                        <td>{{$loop->index+1}}</td>
+                        <td>{{$usuario->id}}</td>
                         <td>{{$usuario->name}}</td>
                         <td>{{$usuario->no_identificacion}}</td>
                         <td>{{$usuario->capital}}</td>
                         <td>{{$usuario->rendimiento}}</td>
                         <td>{{$usuario->email}}</td>
                         <td>
-                            <form action="" method="POST">
+                            <form action="{{route("users.destroy", $usuario->id)}}" method="POST" class="delete-form">
                                 @csrf
                                 @method("DELETE")
                                 <button class="btn btn-danger">x</button>

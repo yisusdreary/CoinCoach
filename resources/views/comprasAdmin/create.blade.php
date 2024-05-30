@@ -5,8 +5,7 @@
         <div class="col">
             <form action="{{url("comprasAdmin")}}" method="POST">
                 @csrf
-                @method("PUT")
-                <h1>Editar compras</h1>
+                <h1>Registrar compras</h1>
 
                 <div class="mb-3 mt-4">
                     <label for="id" class="form-label">Usuario</label>
