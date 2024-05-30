@@ -15,7 +15,11 @@ class ComprasController extends Controller
     {
 
 
+    // Obtener todas las criptomonedas disponibles
+
+
 // Obtener todas las criptomonedas disponibles
+
         $criptomonedas = Criptomoneda::all();
         $id = 2;
 
