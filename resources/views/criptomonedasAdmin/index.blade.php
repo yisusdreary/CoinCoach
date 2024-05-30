@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-8 bg-white pt-3">
 
-            <a href="" class="btn btn-success text-white mb-3">Agregar criptomonedas</a>
+            <a href="{{url("criptomonedasAdmin/create")}}" class="btn btn-success text-white mb-3">Agregar criptomonedas</a>
 
             <table class="table">
                 <thead>
@@ -31,7 +31,7 @@
                             </form>
                         </td>
                         <td>
-                            <a class="btn btn-primary text-white" href="">Editar</a>
+                            <a href="{{route("criptomonedasAdmin.edit", $criptomoneda)}}" class="btn btn-primary text-white">Editar</a>
                         </td>
                     </tr>
                 @endforeach

@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('criptomonedasAdmin', CriptomonedaAdminController::class);
+Route::resource('criptomonedasAdmin', \App\Http\Controllers\CriptomonedaAdminController::class);
 Route::resource('ventasAdmin', \App\Http\Controllers\VentaAdminController::class);
 Route::resource('comprasAdmin', \App\Http\Controllers\CompraAdminController::class);
 
@@ -35,3 +35,11 @@ Route::resource('users', \App\Http\Controllers\UserController::class);
 Route::put('usuario/{id}', [\App\Http\Controllers\UserController::class, 'actualizar'])->name('usuario.actualizar');
 
 Route::resource('home', \App\Http\Controllers\HomeController::class);
+
+// En routes/web.php
+Route::get('/compras/comprahome/{id}', [\App\Http\Controllers\ComprasController::class, 'comprahome'])->name('compras.comprahome');
+
+//PURAS MAMADAS
+//Route::post('criptomonedasAdmin/create', '\App\Http\Controllers\CriptomonedaAdminController@store');
+Route::put('criptomonedasAdmin/{id}/edit', '\App\Http\Controllers\CriptomonedaAdminController@update');
+

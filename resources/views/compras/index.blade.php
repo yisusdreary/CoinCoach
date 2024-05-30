@@ -29,7 +29,7 @@
                         <label for="id_criptomoneda" class="custom-label">Seleccionar Criptomoneda</label>
                         <select class="form-control form-control-lg" id="id_criptomoneda" name="id_criptomoneda">
                             @foreach($criptomonedas as $criptomoneda)
-                                <option value="{{ $criptomoneda->id_criptomoneda }}" data-precio="{{ $criptomoneda->precio_actual }}">
+                                <option @if($id == $criptomoneda->id_criptomoneda) selected @endif value="{{ $criptomoneda->id_criptomoneda }}" data-precio="{{ $criptomoneda->precio_actual }}">
                                     {{ $criptomoneda->nombre_c }}
                                 </option>
                             @endforeach
@@ -54,8 +54,7 @@
                     </div>
                     </div>
                     <div class="form-group mt-3">
-
-                        <button type="submit" class="btn btn-primary btn-lg">Comprar Criptos</button>
+                        <button type="submit" class="btn text-white fw-bolder btn-primary btn-lg ">Comprar Criptos</button>
                     </div>
                 </form>
             </div>

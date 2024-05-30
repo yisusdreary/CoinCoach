@@ -56,7 +56,7 @@
 
                             <div class="row mb-3 justify-content-center">
                                 <div class="col-md-6 offset-md-4">
-                                    <button id="cambiar_datos" type="button" class="btn btn-primary">
+                                    <button id="cambiar_datos" type="button" class="btn btn-primary text-white fw-bolder">
                                         {{ __('Cambiar datos') }}
                                     </button>
                                 </div>

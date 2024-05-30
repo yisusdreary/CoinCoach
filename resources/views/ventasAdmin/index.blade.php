@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-8 bg-white pt-3">
 
-            <a href="" class="btn btn-success text-white mb-3">Agregar ventas</a>
+            <a href="{{url("ventasAdmin/create")}}" class="btn btn-success text-white mb-3">Agregar ventas</a>
 
             <table class="table">
                 <thead>
@@ -28,14 +28,14 @@
                         <td>{{$venta->cantidad_de_venta}}</td>
                         <td>{{$venta->total}}</td>
                         <td>
-                            <form action="" method="POST">
+                            <form action="{{route("ventasAdmin.destroy", $venta->id_venta)}}" method="POST" class="delete-form">
                                 @csrf
                                 @method("DELETE")
                                 <button class="btn btn-danger">x</button>
                             </form>
                         </td>
                         <td>
-                            <a class="btn btn-primary text-white" href="">Editar</a>
+                            <a class="btn btn-primary text-white" href="{{route("ventasAdmin.edit", $venta)}}">Editar</a>
                         </td>
                     </tr>
                 @endforeach
