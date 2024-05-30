@@ -14,7 +14,7 @@ class ComprasController extends Controller
     public function index()
     {
 
-// Obtener todas las criptomonedas disponibles
+    // Obtener todas las criptomonedas disponibles
         $criptomonedas = Criptomoneda::all();
 
         // Pasar los datos a la vista 'ventas.index'
