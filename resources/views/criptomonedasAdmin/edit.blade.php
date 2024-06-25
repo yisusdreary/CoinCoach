@@ -6,43 +6,21 @@
             <form action="{{url("comprasAdmin")}}" method="POST">
                 @csrf
                 @method("PUT")
-                <h1>Editar compras</h1>
+                <h1>Registrar criptomonedas</h1>
 
                 <div class="mb-3 mt-4">
-                    <label for="id" class="form-label">Usuario</label>
-                    <select class="form-control form-control-lg" id="id" name="id">
-                        @foreach($usuarios as $usuario)
-                            <option value="{{ $usuario->id}}">
-                                {{ $usuario->name }}
-                            </option>
-                        @endforeach
-                    </select>
+                    <label for="nombre_c" class="form-label">Nombre de la criptomoneda</label>
+                    <input type="text" class="form-control" id="nombre_c" aria-describedby="emailHelp" name="nombre_c" placeholder="Escriba el nombre de la criptomoneda" value="{{$criptomoneda->nombre_c}}">
                 </div>
 
                 <div class="mb-3 mt-4">
-                    <label for="id_criptomoneda" class="form-label">Criptomoneda</label>
-                    <select class="form-control form-control-lg" id="id_criptomoneda" name="id_criptomoneda">
-                        @foreach($criptomonedas as $criptomoneda)
-                            <option value="{{ $criptomoneda->id_criptomoneda }}" data-precio="{{ $criptomoneda->precio_actual }}">
-                                {{ $criptomoneda->nombre_c }}
-                            </option>
-                        @endforeach
-                    </select>
-                </div>
-
-                <div class="mb-3 mt-4">
-                    <label for="cantidad_de_compra" class="form-label">Cantidad</label>
-                    <input type="number" class="form-control" id="cantidad_de_compra" aria-describedby="emailHelp" name="cantidad_de_compra" placeholder="Cantidad a comprar">
-                </div>
-
-                <div class="mb-3 mt-4">
-                    <label for="total" class="form-label">Total</label>
-                    <input type="number" class="form-control" id="total" aria-describedby="emailHelp" name="total" placeholder="Total de compra">
+                    <label for="precio_actual" class="form-label">Precio de la criptomoneda</label>
+                    <input type="number" class="form-control" id="precio_actual" aria-describedby="emailHelp" name="precio_actual" placeholder="Escriba el precio de la criptomoneda" value="{{$criptomoneda->precio_actual}}">
                 </div>
 
                 <div class="row">
                     <div class="col-1 me-3">
-                        <a href="{{url("comprasAdmin")}}" type="submit" class="btn btn-danger mt-4 fw-bolder">Cancelar</a>
+                        <a href="{{url("criptomonedasAdmin")}}" type="submit" class="btn btn-danger mt-4 fw-bolder">Cancelar</a>
                     </div>
                     <div class="mt-3">
                         <button type="submit" class="btn text-white fw-bolder btn-primary btn-lg ">Guardar</button>

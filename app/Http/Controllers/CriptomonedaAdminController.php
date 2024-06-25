@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Criptomoneda;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CriptomonedaAdminController extends Controller
@@ -49,9 +50,9 @@ class CriptomonedaAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Criptomoneda $criptomoneda)
+    public function edit(Criptomoneda $criptomoneda, User $usuarios)
     {
-        return view('criptomonedasAdmin.edit', compact('criptomoneda'));
+        return view('criptomonedasAdmin.edit', compact('criptomoneda', 'usuarios'));
     }
 
     /**
