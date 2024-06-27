@@ -10,7 +10,9 @@
                                 <h3>Modificar perfil</h3>
                             </div>
                             <div class="col-6 d-flex align-items-end justify-content-end">
-                                <a href="{{ route('users.index') }}" class="btn btn-primary float-right">Regresar</a>
+                                @if(auth()->user()->id==1)
+                                    <a href="{{ route('users.index') }}" class="btn btn-primary float-right">Regresar</a>
+                                @endif
                             </div>
                         </div>
                     </div>

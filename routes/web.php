@@ -41,5 +41,5 @@ Route::get('/compras/comprahome/{id}', [\App\Http\Controllers\ComprasController:
 
 //PURAS MAMADAS
 //Route::post('criptomonedasAdmin/create', '\App\Http\Controllers\CriptomonedaAdminController@store');
-Route::put('criptomonedasAdmin/{id}/edit', '\App\Http\Controllers\CriptomonedaAdminController@update');
+//Route::put('criptomonedasAdmin/{id}/edit', '\App\Http\Controllers\CriptomonedaAdminController@update');
 

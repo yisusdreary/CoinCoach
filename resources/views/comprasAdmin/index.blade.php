@@ -35,7 +35,7 @@
                             </form>
                         </td>
                         <td>
-                            <a class="btn btn-primary text-white" href="{{route("comprasAdmin.edit", $compra)}}">Editar</a>
+                            <a class="btn btn-primary text-white" href="{{route("comprasAdmin.edit", $compra->id_compra)}}">Editar</a>
                         </td>
                     </tr>
                 @endforeach

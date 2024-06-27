@@ -50,16 +50,20 @@ class CriptomonedaAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Criptomoneda $criptomoneda, User $usuarios)
+    public function edit($llegan)
     {
-        return view('criptomonedasAdmin.edit', compact('criptomoneda', 'usuarios'));
+        $criptomoneda = Criptomoneda::where('id_criptomoneda',$llegan)->first();
+        //dd($criptomoneda);
+        return view('criptomonedasAdmin.edit', compact('criptomoneda'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Criptomoneda $criptomoneda)
+    public function update(Request $request)
     {
+        $criptomoneda = Criptomoneda::where('id_criptomoneda',$request->id)->first();
+        //dd($criptomoneda,$request->all());
         $criptomoneda->update([
             "nombre_c"=>$request->nombre_c,
             "precio_actual"=>$request->precio_actual,

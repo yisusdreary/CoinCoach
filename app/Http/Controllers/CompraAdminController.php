@@ -14,7 +14,6 @@ class CompraAdminController extends Controller
      */
     public function index()
     {
-
         $compras = Compra::all();
         return view('comprasAdmin.index', compact("compras"));
     }
@@ -55,19 +54,31 @@ class CompraAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Compra $compra)
+    public function edit($id_compra)
     {
+        $compra = Compra::where('compras.id_compra',$id_compra)->first();
+        //dd($compra);
         $criptomonedas = Criptomoneda::all();
         $usuarios = User::all();
-        return view('comprasAdmin.edit', compact('criptomonedas', 'usuarios'));
+        return view('comprasAdmin.edit', compact('criptomonedas', 'usuarios','compra'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Compra $compra)
+    public function update(Request $request)
     {
-        //
+        //dd($request->all());
+        $compra = Compra::where('compras.id_compra',$request->id_compra)->first();
+
+        $compra->update([
+            'id_cliente' => $request->id_usuario,
+            'id_criptomoneda' => $request->id_criptomoneda,
+            'cantidad_de_compra' => $request->cantidad_de_compra,
+            'total' => $request->total
+        ]);
+
+        return redirect()->route('comprasAdmin.index');
     }
 
     /**

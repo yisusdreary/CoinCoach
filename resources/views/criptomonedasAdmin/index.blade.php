@@ -31,7 +31,7 @@
                             </form>
                         </td>
                         <td>
-                            <a href="{{route("criptomonedasAdmin.edit", $criptomoneda)}}" class="btn btn-primary text-white">Editar</a>
+                            <a href="{{route("criptomonedasAdmin.edit", $criptomoneda->id_criptomoneda)}}" class="btn btn-primary text-white">Editar</a>
                         </td>
                     </tr>
                 @endforeach

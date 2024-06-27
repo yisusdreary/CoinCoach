@@ -3,10 +3,11 @@
     <div class="row mt-4">
         <div class="col-2"></div>
         <div class="col">
-            <form action="{{url("comprasAdmin")}}" method="POST">
+            <form action="{{route("criptomonedasAdmin.update",$criptomoneda)}}" method="POST">
                 @csrf
                 @method("PUT")
                 <h1>Registrar criptomonedas</h1>
+                <input type="hidden" name="id" value="{{$criptomoneda->id_criptomoneda}}">
 
                 <div class="mb-3 mt-4">
                     <label for="nombre_c" class="form-label">Nombre de la criptomoneda</label>
@@ -15,7 +16,7 @@
 
                 <div class="mb-3 mt-4">
                     <label for="precio_actual" class="form-label">Precio de la criptomoneda</label>
-                    <input type="number" class="form-control" id="precio_actual" aria-describedby="emailHelp" name="precio_actual" placeholder="Escriba el precio de la criptomoneda" value="{{$criptomoneda->precio_actual}}">
+                    <input type="number" class="form-control" id="precio_actual" aria-describedby="emailHelp" name="precio_actual" placeholder="Precio anterior: {{$criptomoneda->precio_actual}}" value="{{$criptomoneda->precio_actual}}">
                 </div>
 
                 <div class="row">

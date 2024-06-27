@@ -35,7 +35,7 @@
                             </form>
                         </td>
                         <td>
-                            <a class="btn btn-primary text-white" href="{{route("ventasAdmin.edit", $venta)}}">Editar</a>
+                            <a class="btn btn-primary text-white" href="{{route("ventasAdmin.edit", $venta->id_venta)}}">Editar</a>
                         </td>
                     </tr>
                 @endforeach

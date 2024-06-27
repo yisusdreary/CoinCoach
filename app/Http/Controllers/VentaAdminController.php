@@ -54,8 +54,14 @@ class VentaAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Venta $venta)
+    public function edit($id_venta)
     {
+        $venta = Venta::where('id_venta',$id_venta)
+            ->join('criptomonedas', 'ventas.id_criptomoneda', '=','criptomonedas.id_criptomoneda')
+            ->join('users','ventas.id_cliente','=','users.id')
+            ->select('ventas.*','criptomonedas.*','users.*')
+            ->first();
+        //dd($venta->all());
         $criptomonedas = Criptomoneda::all();
         $usuarios = User::all();
         return view('ventasAdmin.edit', compact('criptomonedas', 'usuarios', 'venta'));
@@ -64,13 +70,15 @@ class VentaAdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Venta $venta)
+    public function update(Request $request)
     {
+        //dd($request->all(),$venta->all());
+        $venta = Venta::where('id_venta',$request->id_venta)->first();
         $venta->update([
-            'id_cliente' => $request->id,
+            'id_cliente' => $request->id_usuario,
             'id_criptomoneda' => $request->id_criptomoneda,
             'fecha_venta' => now(),
-            'cantidad_de_venta' => $request->cantidad_de_compra,
+            'cantidad_de_venta' => $request->cantidad_de_venta,
             'total' =>$request->total
         ]);
         return redirect()->route("ventasAdmin.index");
