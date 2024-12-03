@@ -6,6 +6,7 @@ use App\Models\Criptomoneda;
 use App\Models\User;
 use App\Models\Venta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VentaAdminController extends Controller
 {
@@ -14,8 +15,26 @@ class VentaAdminController extends Controller
      */
     public function index()
     {
-        $ventas = Venta::all();
-        return view('ventasAdmin.index', compact('ventas'));
+        //Obtengo el id del usuario que inició sesión.
+        $userId = Auth::user()->id;
+
+        if ($userId == 1)       //Si es 1 es administrador
+        {
+
+
+            return view('ventasAdmin.index');
+        }
+        elseif ($userId == 2)         //Si no es administrador ver si es doctor
+        {
+
+
+            return redirect()->route('ventasDoctor.index');
+        }
+        else        //Si no es ninguno de los anteriores es un paciente
+        {
+
+            return redirect()->route('ventas.index');
+        }
     }
 
     /**
